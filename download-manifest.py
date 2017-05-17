@@ -23,7 +23,7 @@ def download_manifest_for_repo(repo, tag):
     token = response_json["token"]
     response = requests.get(
         get_manifest_template.format(repository=repo, tag=tag),
-        headers={"Authorization": "Bearer {}".format(token)},
+        headers={"Authorization": "Bearer {}".format(token), "Accept": "application/vnd.docker.distribution.manifest.list.v2+json"},
         json=True
     )
     manifest = response.json()
