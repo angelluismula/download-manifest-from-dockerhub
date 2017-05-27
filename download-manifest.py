@@ -45,7 +45,7 @@ def main():
             repo, tag = repo_tag, "latest"
         if "/" not in repo:
             repo = "library/" + repo
-        pretty_print(download_manifest_for_repo(repo, tag))
+        pretty_print(download_manifest_for_repo(repo.lower(), tag.lower()))
         return 0
 
 
